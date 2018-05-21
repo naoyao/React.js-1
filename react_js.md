@@ -18,3 +18,6 @@ extends React.Component
 render() <=JSXでは
 props(<=場合によってはthisをつける必要がある。)
 Component(<=重要)
+
+・実は React では this.state に値がセットできるのは constructor の中だけで、それ以外の場所では setState を使わないといけないというルールになっています。
+・ちなみに React では setState するたびに render() が呼ばれて、それによって新しい値で UI が再描画されるといった仕組みになっていることも覚えておきましょう。

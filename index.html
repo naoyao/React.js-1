@@ -24,14 +24,22 @@
         constructor(props){
           super(props);
           this.state = {
-            count:10,
-            message:'hello!'
+            count:0
           };
+          this.countUp = this.countUp.bind(this);
+        }
+
+        countUp(){
+          this.setState( prevState => {
+            return{
+              count:this.state.count +1
+            };
+          });
         }
 
         render(){
           return(
-              <li style={{backgroundColor:this.props.color}}>
+              <li style={{backgroundColor:this.props.color}} onClick={this.countUp} >
                 {this.state.count}
               </li>
           );
@@ -39,7 +47,6 @@
       }
 
       ReactDOM.render(
-
         <div className="container">
           <ul>
             <Counter color="tomato"/>
