@@ -21,7 +21,7 @@
     (() => {
 
       function Counter(props){
-        return(
+        return (
           <li style={{backgroundColor:props.counter.color}} >
             {props.counter.id}:{props.counter.count}
           </li>
@@ -40,22 +40,21 @@
           };
         }
 
-        render()[
+        render(){
           return(
             <div className="container">
             <ul>
-            <Counter counter={this.state.counters[0]} />
+            <Counter counter={this.state.counters[0]}/>
             <Counter counter={this.state.counters[1]}/>
             <Counter counter={this.state.counters[2]}/>
             </ul>
             <div>TOTAL INYRNTORY:3</div>
-            </div>,
+            </div>
           );
-        ]
+        }
       }
 
       ReactDOM.render(
-
         <App/>,
 
         // 第二引数は、そのUIをどこに描画するかを指定してあげる
