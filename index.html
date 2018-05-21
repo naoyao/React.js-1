@@ -46,14 +46,27 @@
         }
       }
 
-      ReactDOM.render(
-        <div className="container">
-          <ul>
+      class App extends React.Component{
+        constructor(){
+          super();        }
+
+        render()[
+          return(
+            <div className="container">
+            <ul>
             <Counter color="tomato"/>
             <Counter color="skyblue"/>
             <Counter color="limegreen"/>
-          </ul>
-        </div>,
+            </ul>
+            <div>TOTAL INYRNTORY:3</div>
+            </div>,
+          );
+        ]
+      }
+
+      ReactDOM.render(
+
+        <App/>,
 
         // 第二引数は、そのUIをどこに描画するかを指定してあげる
         document.getElementById('root')
