@@ -21,10 +21,27 @@
     (() => {
 
       function Counter(props){
+
         return (
           <li style={{backgroundColor:props.counter.color}} >
             {props.counter.id}:{props.counter.count}
           </li>
+        );
+      }
+
+      function CounterList(props){
+        const counters = props.counters.map(counter =>{
+          return(
+            <Counter
+            counter={counter}
+            key={counter.id}
+            />
+          );
+        });
+        return(
+          <ul>
+            {counters}
+          </ul>
         );
       }
 
@@ -43,12 +60,10 @@
         render(){
           return(
             <div className="container">
-            <ul>
-            <Counter counter={this.state.counters[0]}/>
-            <Counter counter={this.state.counters[1]}/>
-            <Counter counter={this.state.counters[2]}/>
-            </ul>
-            <div>TOTAL INYRNTORY:3</div>
+
+              <CounterList counters={this.state.counters}/>
+
+              <div>TOTAL INYRNTORY:3</div>
             </div>
           );
         }
