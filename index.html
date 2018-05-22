@@ -19,11 +19,11 @@
 
   <script type="text/babel">
     (() => {
-
+// カウントする部分のみため
       function Counter(props){
         return (
           <li style={{backgroundColor:props.counter.color}} onClick={()=> props.countUp(props.counter)} >
-            {props.counter.id}:{props.counter.count}
+            {props.counter.id}-({props.counter.count})
           </li>
         );
       }
@@ -53,7 +53,10 @@
               {id:'A' , count:0, color: 'tomato'},
               {id:'B' , count:0, color: 'skyblue'},
               {id:'C' , count:0, color: 'limegreen'},
-            ]
+              {id:'D' , count:0, color: 'gray'},
+              {id:'E' , count:0, color: 'pink'},
+            ],
+            total:0
           };
           this.countUp = this.countUp.bind(this);
         }
@@ -67,22 +70,19 @@
             }).indexOf(counter.id);
             counters[pos].count++;
             return{
-              counters:counters
+              counters:counters,
+              total:prevState.total + 1
             };
           });
         }
-
         render(){
           return(
             <div className="container">
-
               <CounterList
                 counters={this.state.counters}
                 countUp ={this.countUp}
-
               />
-
-              <div>TOTAL INYRNTORY:3</div>
+              <div>TOTAL INYRNTORY:{this.state.total}</div>
             </div>
           );
         }

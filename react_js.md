@@ -27,3 +27,7 @@ Component(<=重要)
 indexOf
 const
 ・「.indexOf(counter.id); 」とすると counter の id を持つデータが何番目かがわかる。
+
+
+・React ではこのように Component 単位で管理していくことで機能を拡張したり再利用したり、といったことが簡単にできます。
+・ React では Component を細かく分けていくことで、部品の修正や再利用を簡単に行うことができるので、興味がある人はご自身でもいろいろ改造してみてください。
