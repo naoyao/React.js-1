@@ -23,3 +23,7 @@ Component(<=重要)
 ・ちなみに React では setState するたびに render() が呼ばれて、それによって新しい値で UI が再描画されるといった仕組みになっていることも覚えておきましょう。
 
 ・React では今回のように state を持つ Component は最小限にしてあげて、その他の Component には極力値を持たせないという設計が良いとされているので、それも意識しておくと良いかと思います。
+
+indexOf
+const
+・「.indexOf(counter.id); 」とすると counter の id を持つデータが何番目かがわかる。
